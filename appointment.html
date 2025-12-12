@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="doctors.html">Doctors</a> |
+        <a href="appointment.html">Book Appointment</a> |
+        <a href="admin.html">Admin</a>
+    </nav>
+    <form action="submit_appointment.html" method="post">
+        <label for="patientName">Patient Name:</label><br>
+        <input type="text" id="patientName" name="patientName" required><br><br>
+
+        <label for="doctor">Select Doctor:</label><br>
+        <select id="doctor" name="doctor" required>
+            <option value="Dr. Rohan Mehta">Dr. Rohan Mehta - Cardiologist</option>
+            <option value="Dr. Sneha Kapoor">Dr. Sneha Kapoor - Dermatologist</option>
+            <option value="Dr. Amit Sharma">Dr. Amit Sharma - General Physician</option>
+        </select><br><br>
+
+        <label for="date">Select Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Select Time:</label><br>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <label for="symptoms">Describe Symptoms:</label><br>
+        <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Book Appointment">
+</body>
+</html>
