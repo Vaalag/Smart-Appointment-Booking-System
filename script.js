@@ -70,3 +70,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+ /* ================= CHATBOT ================= */
+
+    const chatbotBtn = document.getElementById("chatbotBtn");
+    const chatbotBox = document.getElementById("chatbotBox");
+    const closeChat = document.getElementById("closeChat");
+    const sendBtn = document.getElementById("sendBtn");
+    const chatInput = document.getElementById("chatInput");
+    const chatMessages = document.getElementById("chatbotMessages");
+
+    if (chatbotBtn && chatbotBox) {
+
+        chatbotBtn.addEventListener("click", function () {
+            chatbotBox.style.display = "block";
+        });
+
+        closeChat.addEventListener("click", function () {
+            chatbotBox.style.display = "none";
+        });
+
+        sendBtn.addEventListener("click", function () {
+            let msg = chatInput.value.trim();
+            if (msg === "") return;
+
+            chatMessages.innerHTML += `<p><b>You:</b> ${msg}</p>`;
+
+            let reply = "Please visit the Appointment page for booking.";
+
+            if (msg.toLowerCase().includes("hello"))
+                reply = "Hello! How can I help you?";
+            else if (msg.toLowerCase().includes("appointment"))
+                reply = "You can book an appointment from the Book Appointment page.";
+            else if (msg.toLowerCase().includes("doctor"))
+                reply = "Check Doctors page to see available doctors.";
+
+            chatMessages.innerHTML += `<p><b>Bot:</b> ${reply}</p>`;
+            chatInput.value = "";
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    }
+
+});
+
+
